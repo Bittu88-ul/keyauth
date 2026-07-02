@@ -1,5 +1,5 @@
 // ==================== CONFIGURATION ====================
-const API_BASE_URL = 'https://my-flask-api-3-jhdp.onrender.com/api';
+const API_BASE_URL = 'https://my-flask-api-3-jhdp.onrender.com';
 
 let JWT_TOKEN = localStorage.getItem('token');
 let CURRENT_USER = JSON.parse(localStorage.getItem('user') || 'null');
@@ -16,7 +16,7 @@ async function checkServerStatus() {
     text.className = 'status-text checking';
     
     try {
-        const response = await fetch('https://my-flask-api-3-jhdp.onrender.com/health', {
+        const response = await fetch(`${API_BASE_URL}/health`, {
             method: 'GET',
             signal: AbortSignal.timeout(5000)
         });
@@ -62,7 +62,7 @@ function createToastContainer() {
 
 // ==================== API HELPERS ====================
 async function apiRequest(endpoint, options = {}) {
-    const url = `${API_BASE_URL}${endpoint}`;
+    const url = `${API_BASE_URL}/api${endpoint}`;
     console.log('📡 API Call:', url);
     
     const headers = {
