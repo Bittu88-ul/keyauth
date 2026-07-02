@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Server Status -->
+    <div class="server-status">
+        <div class="status-dot checking" id="statusDot"></div>
+        <span class="status-text checking" id="statusText">Checking...</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center;">
+        <div style="max-width: 700px;">
+            <h1 style="font-size: 56px; font-weight: 800; margin-bottom: 10px; background: linear-gradient(135deg, #6C63FF, #00D4FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                🚀 License Manager
+            </h1>
+            <p style="font-size: 20px; color: var(--gray); margin-bottom: 40px;">
+                Secure, scalable license management system for your applications
+            </p>
+            
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="/login.html" class="btn btn-primary btn-lg">Login</a>
+                <a href="/register.html" class="btn btn-outline btn-lg">Register</a>
+            </div>
+            
+            <div style="margin-top: 50px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px;">
+                <div class="card">
+                    <div style="font-size: 32px;">🔐</div>
+                    <h3>Secure Auth</h3>
+                    <p style="color: var(--gray); font-size: 14px;">JWT + Session based authentication</p>
+                </div>
+                <div class="card">
+                    <div style="font-size: 32px;">📱</div>
+                    <h3>App Management</h3>
+                    <p style="color: var(--gray); font-size: 14px;">Create and manage multiple apps</p>
+                </div>
+                <div class="card">
+                    <div style="font-size: 32px;">🔑</div>
+                    <h3>License System</h3>
+                    <p style="color: var(--gray); font-size: 14px;">HWID lock, expiry, activation limits</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Server Status -->
+    <div class="server-status">
+        <div class="status-dot checking" id="statusDot"></div>
+        <span class="status-text checking" id="statusText">Checking...</span>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="container">
+        <!-- Header -->
+        <div class="dashboard-header flex-between">
+            <div>
+                <h1>👑 Admin Panel</h1>
+                <p class="user-info">System management and monitoring</p>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <a href="/dashboard.html" class="btn btn-outline btn-sm">Go to Dashboard</a>
+                <button class="btn btn-danger btn-sm" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="admin-stats">
+            <div class="stat-card"><div class="number" id="statUsers">0</div><div class="label">Users</div></div>
+            <div class="stat-card"><div class="number" id="statApps">0</div><div class="label">Applications</div></div>
+            <div class="stat-card"><div class="number" id="statLicenses">0</div><div class="label">Licenses</div></div>
+            <div class="stat-card"><div class="number" id="statActivations">0</div><div class="label">Activations</div></div>
+        </div>
+
+        <!-- Users Table -->
+        <h3 style="margin: 30px 0 16px 0;">👤 Users</h3>
+        <div class="admin-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th><th>Username</th><th>Email</th><th>Role</th><th>Created</th><th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody"></tbody>
+            </table>
+        </div>
+
+        <!-- Apps Table -->
+        <h3 style="margin: 30px 0 16px 0;">📱 Applications</h3>
+        <div class="admin-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>App Name</th><th>Owner ID</th><th>Created By</th><th>Licenses</th><th>Status</th><th>Created</th><th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="appsTableBody"></tbody>
+            </table>
+        </div>
+
+        <!-- Licenses Table -->
+        <h3 style="margin: 30px 0 16px 0;">🔑 Licenses</h3>
+        <div class="admin-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>License Key</th><th>App</th><th>Status</th><th>HWID</th><th>Expires</th><th>Activations</th><th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="licensesTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

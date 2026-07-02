@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Server Status -->
+    <div class="server-status">
+        <div class="status-dot checking" id="statusDot"></div>
+        <span class="status-text checking" id="statusText">Checking...</span>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="container">
+        <!-- Header -->
+        <div class="dashboard-header flex-between">
+            <div>
+                <h1>Welcome back, <span id="username">User</span>!</h1>
+                <p class="user-info">Manage your applications and licenses</p>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <span style="color: var(--gray); font-size: 14px;">🔑 API Key: <code id="apiKey" style="background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 6px;"></code></span>
+                <button class="btn btn-danger btn-sm" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="number" id="totalApps">0</div>
+                <div class="label">Total Applications</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="totalLicenses">0</div>
+                <div class="label">Total Licenses</div>
+            </div>
+        </div>
+
+        <!-- Create App -->
+        <div class="card-glass" style="margin-bottom: 30px;">
+            <h3 style="margin-bottom: 16px;">+ Create New Application</h3>
+            <form id="createAppForm" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <input type="text" class="form-control" id="appName" placeholder="Enter app name..." style="flex: 1; min-width: 200px;">
+                <button type="submit" class="btn btn-primary">Create App</button>
+            </form>
+        </div>
+
+        <!-- Applications -->
+        <h2 style="margin-bottom: 20px;">📱 Your Applications</h2>
+        <div id="appList" class="app-grid"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
