@@ -1,7 +1,5 @@
 // ==================== CONFIGURATION ====================
-// ⚠️ IMPORTANT: Apna exact IP yahan daalo!
-// Backend terminal mein dekho "Running on http://xxx.xxx.xxx.xxx:5000"
-const API_BASE_URL = 'http://127.0.0.1:5000/api';
+const API_BASE_URL = 'https://my-flask-api-3-jhdp.onrender.com/api';
 
 let JWT_TOKEN = localStorage.getItem('token');
 let CURRENT_USER = JSON.parse(localStorage.getItem('user') || 'null');
@@ -18,8 +16,7 @@ async function checkServerStatus() {
     text.className = 'status-text checking';
     
     try {
-        // ⚠️ Yahan bhi IP daalo!
-        const response = await fetch('http://127.0.0.1:5000/health', {
+        const response = await fetch('https://my-flask-api-3-jhdp.onrender.com/health', {
             method: 'GET',
             signal: AbortSignal.timeout(5000)
         });
@@ -66,7 +63,7 @@ function createToastContainer() {
 // ==================== API HELPERS ====================
 async function apiRequest(endpoint, options = {}) {
     const url = `${API_BASE_URL}${endpoint}`;
-    console.log('📡 API Call:', url); // Debug ke liye
+    console.log('📡 API Call:', url);
     
     const headers = {
         'Content-Type': 'application/json',
