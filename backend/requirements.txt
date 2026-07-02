@@ -6,4 +6,4 @@ python-dotenv==1.0.0
 PyJWT==2.8.0
 bcrypt==4.0.1
 email-validator==2.0.0
-gunicorn==23.0.0   <-- Ye line add karo!
+gunicorn==23.0.0
